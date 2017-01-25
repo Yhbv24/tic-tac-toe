@@ -8,21 +8,24 @@ Player.prototype.tempScore = function() {
   tempScore += rollScore;
 };
 
-Player.prototype.rollScore = function() {
+Player.prototype.rollScore = function(diceRoller) {
   rollScore += rollScore;
 };
 
 var diceRoller = function() {
+   Math.floor(Math.random() * ((6 - 1) + 1) + 1);
+}
+var tempNumber = [];
 
-  var score = Math.floor(Math.random() * ((6 - 1) + 1) + 1);
-
-  if (score === 1) {
-    return ("you lose!");
+var counter = function() {
+  var totalTempNumber = 0;
+  for (var i = 0; i < tempNumber.length; i++) {
+     totalTempNumber += tempNumber[i]
   }
-    else {
-      return score;
-    }
+
+  return totalTempNumber;
 };
+
 
 //*****FRONT-END*****
 
@@ -44,7 +47,10 @@ $(function() {
   });
 
   $("#roll_button").click(function() {
-    $('#roll_score').text(diceRoller);
-
+    var ranNumber = diceRoller();
+    $("#roll_score").text(ranNumber);
+    tempNumber.push(ranNumber);
+    var output = counter();
+    $("#temp_score").text(output);
   });
 });
