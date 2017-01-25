@@ -4,28 +4,17 @@ function Player(playerName, totalScore) {
   this.totalScore = totalScore;
 }
 
-Player.prototype.tempScore = function() {
-  tempScore += rollScore;
-};
-
-Player.prototype.rollScore = function(diceRoller) {
-  rollScore += rollScore;
-};
 
 var diceRoller = function() {
-   Math.floor(Math.random() * ((6 - 1) + 1) + 1);
+  var maths = Math.floor((Math.random() * 6) + 1);
+  return maths;
 }
-var tempNumber = [];
 
-var counter = function() {
-  var totalTempNumber = 0;
-  for (var i = 0; i < tempNumber.length; i++) {
-     totalTempNumber += tempNumber[i]
-  }
+var rollCounter = 0;
 
-  return totalTempNumber;
+var add = function(n) {
+  return rollCounter += n;
 };
-
 
 //*****FRONT-END*****
 
@@ -48,9 +37,8 @@ $(function() {
 
   $("#roll_button").click(function() {
     var ranNumber = diceRoller();
-    $("#roll_score").text(ranNumber);
-    tempNumber.push(ranNumber);
-    var output = counter();
-    $("#temp_score").text(output);
+    $('#roll_score').text(ranNumber)
+    var tempScore = add(ranNumber);
+    $('#temp_score').text(tempScore)
   });
 });
