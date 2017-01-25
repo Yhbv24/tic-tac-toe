@@ -13,7 +13,12 @@ var diceRoller = function() {
 var rollCounter = 0;
 
 var add = function(n) {
-  return rollCounter += n;
+  if (n === 1) {
+    rollCounter = 0
+    return "YOU LOSE!"
+  } else {
+    return rollCounter += n;
+  }
 };
 
 //*****FRONT-END*****
@@ -39,6 +44,11 @@ $(function() {
     var ranNumber = diceRoller();
     $('#roll_score').text(ranNumber)
     var tempScore = add(ranNumber);
+
     $('#temp_score').text(tempScore)
+  });
+
+  $("#end_button").click(function() {
+    
   });
 });
