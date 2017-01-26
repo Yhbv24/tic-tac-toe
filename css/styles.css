@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+img {
+  height: 150px;
+}
+
+#one, #two, #three, #four, #five, #six {
+  display: none;
+}
+
 /*#game_display {
   display: none;
 }*/

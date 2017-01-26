@@ -80,13 +80,56 @@ $(function() {
 
     $("#roll_button").click(function() {
       var ranNumber = diceRoller();
-      $('#roll_score').text(ranNumber)
+      if (ranNumber === 1) {
+        $("#one").show();
+        $("#two").hide();
+        $("#three").hide();
+        $("#four").hide();
+        $("#five").hide();
+        $("#six").hide();
+      } else if (ranNumber === 2) {
+        $("#one").hide();
+        $("#two").show();
+        $("#three").hide();
+        $("#four").hide();
+        $("#five").hide();
+        $("#six").hide();
+      } else if (ranNumber === 3) {
+        $("#one").hide();
+        $("#two").hide();
+        $("#three").show();
+        $("#four").hide();
+        $("#five").hide();
+        $("#six").hide();
+      } else if (ranNumber === 4) {
+        $("#one").hide();
+        $("#two").hide();
+        $("#three").hide();
+        $("#four").show();
+        $("#five").hide();
+        $("#six").hide();
+      } else if (ranNumber === 5) {
+        $("#one").hide();
+        $("#two").hide();
+        $("#three").hide();
+        $("#four").hide();
+        $("#five").show();
+        $("#six").hide();
+      } else if (ranNumber === 6) {
+        $("#one").hide();
+        $("#two").hide();
+        $("#three").hide();
+        $("#four").hide();
+        $("#five").hide();
+        $("#six").show();
+      }
       var doIt = add(ranNumber);
       $('#temp_score').text(doIt)
     });
 
     $("#end_button").click(function() {
       var run = turnChecker();
+      $("#temp_score").text(rollCounter);
 
       // if (createPlayerOne.turn === true) {
       //   createPlayerOne.addToTotal();
