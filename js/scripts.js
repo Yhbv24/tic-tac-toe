@@ -1,14 +1,17 @@
 //*****BACK-END*****
-function Player(playerName, totalScore) {
-  this.playerName = playerName;
+function Player(playerId, totalScore) {
+  this.playerId = playerId;
   this.totalScore = totalScore;
 }
 
+Player.prototype.addToTotal = function() {
+  return this.totalScore += rollCounter;
+}
 
 var diceRoller = function() {
   var maths = Math.floor((Math.random() * 6) + 1);
   return maths;
-}
+};
 
 var rollCounter = 0;
 
@@ -27,28 +30,28 @@ $(function() {
   $("#user_input").submit(function(event) {
     event.preventDefault();
 
-    var playerOneName = $("#name_player1").val();
-    var playerTwoName = $("#name_player2").val();
+    var playerOne = $("#name_player1").val();
+    var playerTwo = $("#name_player2").val();
 
-    var createPlayerOne = new Player(playerOneName, 0);
-    var createPlayerTwo = new Player(playerTwoName, 0);
+    var createPlayerOne = new Player(1, 0);
+    var createPlayerTwo = new Player(2, 0);
 
-    $("#player1").text(createPlayerOne.playerName + ": " + createPlayerOne.totalScore);
-    $("#player2").text(createPlayerTwo.playerName + ": " + createPlayerTwo.totalScore);
+    $("#player1").text(playerOne + ": ");
+    $("#player2").text(playerTwo + ": ");
 
-    $("#user_input").hide();
-    $("#game_display").show();
-  });
+    $("#roll_button").click(function() {
+      var ranNumber = diceRoller();
+      $('#roll_score').text(ranNumber)
+      var doIt = add(ranNumber);
+      $('#temp_score').text(doIt)
+    });
 
-  $("#roll_button").click(function() {
-    var ranNumber = diceRoller();
-    $('#roll_score').text(ranNumber)
-    var tempScore = add(ranNumber);
+    $("#end_button").click(function() {
+      createPlayerOne.addToTotal();
+      $("#playerScoreOne").text(createPlayerOne.totalScore)
+    });
 
-    $('#temp_score').text(tempScore)
-  });
-
-  $("#end_button").click(function() {
-    
+    // $("#user_input").hide();
+    // $("#game_display").show();
   });
 });

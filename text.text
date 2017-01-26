@@ -1,0 +1,83 @@
+# Pig Dice
+
+## Specifications
+
+pig Dice
+  2 players
+    unique ID, total
+
+  take turns rolling Dice
+    roll dice and add to temporary total with each roll
+    when turn ends
+      if player ends turn then add temp total to player total and switch turns
+      if players rolls a 1 then delete temp total and switch turns
+    Game ends when a player's total >= 100
+
+
+
+  rolling form
+    roll button
+      function that determines how much the roll is
+        display of what the roll is
+        adds value to temporary score
+
+        IF roll = 1 then delete temp score and switch turns
+
+    temporary score display
+      displays running total of the turn
+
+    end button
+      gets total of all rolls per turn
+      adds value to player score
+
+
+roll form roll out
+
+1. form in html that includes roll score, total temp score, roll button, end button.
+2.
+
+
+//*****BACK-END*****
+function Player(playerName, totalScore) {
+  this.playerName = playerName;
+  this.totalScore = totalScore;
+}
+
+
+var diceRoller = function() {
+  var maths = Math.floor((Math.random() * 6) + 1);
+  return maths;
+}
+
+var rollCounter = 0;
+
+var add = function(n) {
+  return rollCounter += n;
+};
+
+//*****FRONT-END*****
+
+$(function() {
+  $("#user_input").submit(function(event) {
+    event.preventDefault();
+
+    var playerOneName = $("#name_player1").val();
+    var playerTwoName = $("#name_player2").val();
+
+    var createPlayerOne = new Player(playerOneName, 0);
+    var createPlayerTwo = new Player(playerTwoName, 0);
+
+    $("#player1").text(createPlayerOne.playerName + ": " + createPlayerOne.totalScore);
+    $("#player2").text(createPlayerTwo.playerName + ": " + createPlayerTwo.totalScore);
+
+    $("#user_input").hide();
+    $("#game_display").show();
+  });
+
+  $("#roll_button").click(function() {
+    var ranNumber = diceRoller();
+    $('#roll_score').text(ranNumber)
+    var tempScore = add(ranNumber);
+    $('#temp_score').text(tempScore)
+  });
+});
