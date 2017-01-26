@@ -10,6 +10,16 @@ img {
   display: none;
 }
 
+button {
+  color: black;
+}
+
 /*#game_display {
   display: none;
 }*/
+
+@media screen and (max-width: 750px) {
+  body {
+    background-image: url(../img/90s_background.gif);
+  }
+}

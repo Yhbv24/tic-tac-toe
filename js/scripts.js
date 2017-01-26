@@ -23,12 +23,12 @@ var add = function(n) {
       playerOneOne.turn = false;
       playerTwoTwo.turn = true;
       alert("It's now Player 2's turn!")
-      return "YOU LOSE!"
+      return "Lost your turn, but heres baby Leo"
     } else {
       playerOneOne.turn = true;
       playerTwoTwo.turn = false;
       alert("It's now Player 1's turn!")
-      return "YOU LOSE!"
+      return "Lost your turn, but heres baby Leo"
     }
   } else {
     return rollCounter += n;
