@@ -2,40 +2,10 @@
   text-align: center;
 }
 
-img {
-  height: 150px;
-}
 
-#one, #two, #three, #four, #five, #six {
-  display: none;
-}
 
-#name_player1 {
-  color: white;
-}
-
-#name_player2 {
-  color: white;
-}
-
-button {
-  color: black;
-}
-
-ul {
-  list-style-type: none;
-}
-
-#instructions {
-  margin-top: 100px;
-}
-
-/*#game_display {
-  display: none;
-}*/
-
-@media screen and (max-width: 1440px) {
+/*@media screen and (max-width: 1440px) {
   body {
     background-image: url(../img/90s_background.gif);
   }
-}
+}*/

@@ -1,172 +1,143 @@
 //*****BACK-END*****
-function Player(playerId, totalScore, turn) {
-  this.playerId = playerId;
-  this.totalScore = totalScore;
+
+function Player(playerName, turn) {
+  this.playerName = name;
   this.turn = turn;
 }
 
-Player.prototype.addToTotal = function() {
-  return this.totalScore += rollCounter;
-}
+var playerOneNumbers = [1,2,3,4,5,6,7,8,9];
+var playerTwoNumbers = [1,2,3,4,5,6,7,8,9];
+var winningNumbers = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+  [1,4,7],
+  [2,5,8],
+  [3,6,9],
+  [1,5,9],
+  [3,5,7]
+];
 
-var diceRoller = function() {
-  var maths = Math.floor((Math.random() * 6) + 1);
-  return maths;
-};
+var playerOne = new Player("Ash", true);
+var playerTwo = new Player("Sean", false);
 
-var rollCounter = 0;
+var numberOneChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 1) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+        playerOne.turn = true
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+        playerOne.turn = false
+      }
+    };
+  };
+});
 
-var add = function(n) {
-  if (n === 1) {
-    rollCounter = 0
-    if (playerOneOne.turn === true) {
-      playerOneOne.turn = false;
-      playerTwoTwo.turn = true;
-      alert("It's now Player 2's turn!")
-      return "Lost your turn, but heres baby Leo"
-    } else {
-      playerOneOne.turn = true;
-      playerTwoTwo.turn = false;
-      alert("It's now Player 1's turn!")
-      return "Lost your turn, but heres baby Leo"
-    }
-  } else {
-    return rollCounter += n;
-  }
-};
+var numberTwoChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 2) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
 
-var createPlayerOneFunction = function() {
-  return new Player(1, 0, true);
-}
-var createPlayerTwoFunction = function() {
-   return new Player(2, 0, false);
-}
+var numberThreeChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 3) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
+var numberFourChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 4) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
+var numberFiveChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 5) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
 
-var playerOneOne = createPlayerOneFunction();
-var playerTwoTwo = createPlayerTwoFunction();
+var numberSixChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 6) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
+var numberSevenChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 7) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
 
-var turnChecker = function() {
-  if (playerOneOne.turn === true) {
-    playerOneOne.addToTotal();
-    $("#playerScoreOne").text(playerOneOne.totalScore)
-    playerOneOne.turn = false;
-    playerTwoTwo.turn = true;
-    rollCounter = 0
-    if (playerOneOne.totalScore >= 100){
-      alert("Player One Wins!!");
-      playerOneOne.totalScore = 0;
-      playerTwoTwo.totalScore = 0;
-      playerOneOne.turn = true;
-      playerTwoTwo.turn = false;
-      alert('Player One goes first')
-    } else {
-    alert("It's now Player 2's turn!")
-    }
-  } else {
-    playerTwoTwo.addToTotal();
-    $("#playerScoreTwo").text(playerTwoTwo.totalScore)
-    playerOneOne.turn = true;
-    playerTwoTwo.turn = false;
-    rollCounter = 0
-    if (playerTwoTwo.totalScore >= 100){
-      alert("Player Two Wins!!");
-      playerOneOne.totalScore = 0;
-      playerTwoTwo.totalScore = 0;
-      playerOneOne.turn = false;
-      playerTwoTwo.turn = true;
-      alert('Player two goes first')
-    } else {
-    alert("It's now Player 1's turn!")
-    }
-  }
-}
+var numberEightChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 8) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
+
+var numberNineChecker = winningNumbers.forEach(function(number) {
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === 9) {
+      if (playerOne.turn === false) {
+        return number[i] = "X"
+      } else if (playerOne.turn === true) {
+        return number[i] = "O"
+      }
+    };
+  };
+});
 
 //*****FRONT-END*****
 
 $(function() {
-  $("#user_input").submit(function(event) {
-    event.preventDefault();
+  $("#one").one("click", function() {
+    numberOneChecker;
+    alert(winningNumbers)
+  });
 
-    var playerOne = $("#name_player1").val();
-    var playerTwo = $("#name_player2").val();
-
-    var createPlayerOne = playerOneOne;
-    var createPlayerTwo = playerTwoTwo;
-
-    $("#player1").text(playerOne + ": ");
-    $("#player2").text(playerTwo + ": ");
-
-    $("#roll_button").click(function() {
-      var ranNumber = diceRoller();
-      if (ranNumber === 1) {
-        $("#one").show();
-        $("#two").hide();
-        $("#three").hide();
-        $("#four").hide();
-        $("#five").hide();
-        $("#six").hide();
-      } else if (ranNumber === 2) {
-        $("#one").hide();
-        $("#two").show();
-        $("#three").hide();
-        $("#four").hide();
-        $("#five").hide();
-        $("#six").hide();
-      } else if (ranNumber === 3) {
-        $("#one").hide();
-        $("#two").hide();
-        $("#three").show();
-        $("#four").hide();
-        $("#five").hide();
-        $("#six").hide();
-      } else if (ranNumber === 4) {
-        $("#one").hide();
-        $("#two").hide();
-        $("#three").hide();
-        $("#four").show();
-        $("#five").hide();
-        $("#six").hide();
-      } else if (ranNumber === 5) {
-        $("#one").hide();
-        $("#two").hide();
-        $("#three").hide();
-        $("#four").hide();
-        $("#five").show();
-        $("#six").hide();
-      } else if (ranNumber === 6) {
-        $("#one").hide();
-        $("#two").hide();
-        $("#three").hide();
-        $("#four").hide();
-        $("#five").hide();
-        $("#six").show();
-      }
-      var doIt = add(ranNumber);
-      $('#temp_score').text(doIt)
-    });
-
-    $("#end_button").click(function() {
-      var run = turnChecker();
-      $("#temp_score").text(rollCounter);
-
-      // if (createPlayerOne.turn === true) {
-      //   createPlayerOne.addToTotal();
-      //   $("#playerScoreOne").text(createPlayerOne.totalScore)
-      //   createPlayerOne.turn = false;
-      //   createPlayerTwo.turn = true;
-      //   rollCounter = 0
-      //   alert("Player 2 turn")
-      // } else {
-      //   createPlayerTwo.addToTotal();
-      //   $("#playerScoreTwo").text(createPlayerTwo.totalScore)
-      //   createPlayerOne.turn = true;
-      //   createPlayerTwo.turn = false;
-      //   rollCounter = 0
-      //   alert("Player 1 turn")
-      // }
-    });
-
-    // $("#user_input").hide();
-    // $("#game_display").show();
+  $("#two").one("click", function() {
+    numberTwoChecker;
+    alert(winningNumbers)
   });
 });

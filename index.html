@@ -2,7 +2,6 @@
 <html>
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script
     src="https://code.jquery.com/jquery-3.1.1.js"
@@ -10,86 +9,34 @@
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title>Pig Dice</title>
+    <title>Tic-Tac-Toe</title>
   </head>
   <body>
     <div class="container">
-      <h1>Pig Dice!</h1>
-      <h4>Welcome to Pig Dice! Enter your names and click "Play" to play.</h4><br>
-      <form id="user_input">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label for="player1_name">Enter Player 1:</label>
-              <input type="text" name="player1" id="name_player1">
-            </div>
-          </div>
+      <div class="jumbotron">
 
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label for="player2_name">Enter Player 2:</label>
-              <input type="text" name="player2" id="name_player2">
-            </div>
-          </div>
-
-          <button type="submit">Let's Play!</button>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" id="one"></button>
+          <button type="button" id="two"></button>
+          <button type="button" id="three"></button>
         </div>
-      </form>
+      </div>
 
-        <!-- This div will be hidden until user clicks the "Let's Play" button -->
-
-      <div id="game_display">
-        <div class="row">
-          <div class="col-sm-6">
-              <h3><span id="player1"></span><span id="playerScoreOne"></span></h3>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group">
-              <h3><span id="player2"></span><span id="playerScoreTwo"></span></h3>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" id="four"></button>
+          <button type="button" id="five"></button>
+          <button type="button" id="six"></button>
         </div>
+      </div>
 
-        <div class="row" id="temp_score_display">
-          <div class="col-sm-12">
-            <h3><span id="temp_score"></span></h3>
-          </div>
-        </div>
-
-        <div class="row" id="roll_display">
-          <div class="col-sm-12">
-            <img src="img/leoone.jpg" alt="You rolled a one" id="one">
-            <img src="img/cattwo.jpg" alt="You rolled a two" id="two">
-            <img src="img/bobsaget.jpg" alt="You rolled a three" id="three">
-            <img src="img/nsyncfour.jpg" alt="You rolled a four" id="four">
-            <img src="img/friendsfive.jpg" alt="You rolled a five" id="five">
-            <img src="img/bullssix.jpg" alt="You rolled a six" id="six">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <br><button type="button" id="roll_button">Roll!</button>
-          </div>
-
-          <div class="col-sm-6">
-            <br><button type="button" id="end_button">End Turn!</button>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-12" id="instructions">
-            <h3>How the game works:</h3>
-            <ul>
-              <li><strong>Goal: Get 100 points before opponent.</strong></li>
-              <li>Your starting Total score is 0</li>
-              <li>Everytime you click the roll button a dice is rolled and the score is added to your Temporary score</li>
-              <li>That score is only added to your Total score if you click End Turn! button which willfully ends your turn, and now it is your opponents turn</li>
-              <li>If you roll a 1 then your Temporary score goes to 0 and your turn ends</li>
-            </ul>
-            <br><img src="img/under_construction.gif" alt="Site under construction">
-          </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" id="seven"></button>
+          <button type="button" id="eight"></button>
+          <button type="button" id="nine"></button>
         </div>
       </div>
     </div>
