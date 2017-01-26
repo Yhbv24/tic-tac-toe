@@ -52,14 +52,32 @@ var turnChecker = function() {
     playerOneOne.turn = false;
     playerTwoTwo.turn = true;
     rollCounter = 0
+    if (playerOneOne.totalScore >= 100){
+      alert("Player One Wins!!");
+      playerOneOne.totalScore = 0;
+      playerTwoTwo.totalScore = 0;
+      playerOneOne.turn = true;
+      playerTwoTwo.turn = false;
+      alert('Player One goes first')
+    } else {
     alert("It's now Player 2's turn!")
+    }
   } else {
     playerTwoTwo.addToTotal();
     $("#playerScoreTwo").text(playerTwoTwo.totalScore)
     playerOneOne.turn = true;
     playerTwoTwo.turn = false;
     rollCounter = 0
+    if (playerTwoTwo.totalScore >= 100){
+      alert("Player Two Wins!!");
+      playerOneOne.totalScore = 0;
+      playerTwoTwo.totalScore = 0;
+      playerOneOne.turn = false;
+      playerTwoTwo.turn = true;
+      alert('Player two goes first')
+    } else {
     alert("It's now Player 1's turn!")
+    }
   }
 }
 
