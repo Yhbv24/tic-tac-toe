@@ -14,6 +14,14 @@ button {
   color: black;
 }
 
+ul {
+  list-style-type: none;
+}
+
+#instructions {
+  margin-top: 100px;
+}
+
 /*#game_display {
   display: none;
 }*/
