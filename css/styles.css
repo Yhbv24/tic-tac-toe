@@ -10,6 +10,10 @@ img {
   display: none;
 }
 
+#name_player1 {
+  color: white;
+}
+
 button {
   color: black;
 }
