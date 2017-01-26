@@ -19,8 +19,17 @@ var rollCounter = 0;
 var add = function(n) {
   if (n === 1) {
     rollCounter = 0
-    alert("Switch Turns")
-    return "YOU LOSE!"
+    if (playerOneOne.turn === true) {
+      playerOneOne.turn = false;
+      playerTwoTwo.turn = true;
+      alert("It's now Player 2's turn!")
+      return "YOU LOSE!"
+    } else {
+      playerOneOne.turn = true;
+      playerTwoTwo.turn = false;
+      alert("It's now Player 1's turn!")
+      return "YOU LOSE!"
+    }
   } else {
     return rollCounter += n;
   }
@@ -35,6 +44,24 @@ var createPlayerTwoFunction = function() {
 
 var playerOneOne = createPlayerOneFunction();
 var playerTwoTwo = createPlayerTwoFunction();
+
+var turnChecker = function() {
+  if (playerOneOne.turn === true) {
+    playerOneOne.addToTotal();
+    $("#playerScoreOne").text(playerOneOne.totalScore)
+    playerOneOne.turn = false;
+    playerTwoTwo.turn = true;
+    rollCounter = 0
+    alert("It's now Player 2's turn!")
+  } else {
+    playerTwoTwo.addToTotal();
+    $("#playerScoreTwo").text(playerTwoTwo.totalScore)
+    playerOneOne.turn = true;
+    playerTwoTwo.turn = false;
+    rollCounter = 0
+    alert("It's now Player 1's turn!")
+  }
+}
 
 //*****FRONT-END*****
 
@@ -59,21 +86,23 @@ $(function() {
     });
 
     $("#end_button").click(function() {
-      if (createPlayerOne.turn === true) {
-        createPlayerOne.addToTotal();
-        $("#playerScoreOne").text(createPlayerOne.totalScore)
-        createPlayerOne.turn = false;
-        createPlayerTwo.turn = true;
-        rollCounter = 0
-        alert("Player 2 turn")
-      } else {
-        createPlayerTwo.addToTotal();
-        $("#playerScoreTwo").text(createPlayerTwo.totalScore)
-        createPlayerOne.turn = true;
-        createPlayerTwo.turn = false;
-        rollCounter = 0
-        alert("Player 1 turn")
-      }
+      var run = turnChecker();
+
+      // if (createPlayerOne.turn === true) {
+      //   createPlayerOne.addToTotal();
+      //   $("#playerScoreOne").text(createPlayerOne.totalScore)
+      //   createPlayerOne.turn = false;
+      //   createPlayerTwo.turn = true;
+      //   rollCounter = 0
+      //   alert("Player 2 turn")
+      // } else {
+      //   createPlayerTwo.addToTotal();
+      //   $("#playerScoreTwo").text(createPlayerTwo.totalScore)
+      //   createPlayerOne.turn = true;
+      //   createPlayerTwo.turn = false;
+      //   rollCounter = 0
+      //   alert("Player 1 turn")
+      // }
     });
 
     // $("#user_input").hide();
