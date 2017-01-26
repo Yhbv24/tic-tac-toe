@@ -74,7 +74,6 @@ $(function() {
         rollCounter = 0
         alert("Player 1 turn")
       }
-
     });
 
     // $("#user_input").hide();
