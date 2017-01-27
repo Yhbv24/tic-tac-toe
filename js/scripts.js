@@ -31,8 +31,6 @@ var numberOneChecker = function() {
       };
     };
   });
-
-
 };
 
 var numberTwoChecker = function() {
@@ -149,11 +147,13 @@ var numberNineChecker = function() {
 
 var winChecker = function() {
   winningNumbers.forEach(function(number) {
-      if (number === ["X","X","X"]) {
-        alert("Player one wins!")
-      } else if (number === ["O","O","O"]) {
-        alert("Player two wins!")
-      }
+    if (number[0] === "X" && number[1] === "X" && number[2] === "X") {
+      alert("Player one wins!")
+      return "Player one wins!";
+    } else if (number[0] === "O" && number[1] === "O" && number[2] === "O") {
+      alert("Player two wins!")
+      return "Player one wins!";
+    }
   });
 };
 
@@ -173,7 +173,6 @@ $(function() {
     numberOneChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#two").one("click", function() {
@@ -185,7 +184,6 @@ $(function() {
     numberTwoChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#three").one("click", function() {
@@ -197,7 +195,6 @@ $(function() {
     numberThreeChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#four").one("click", function() {
@@ -209,7 +206,6 @@ $(function() {
     numberFourChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#five").one("click", function() {
@@ -221,7 +217,6 @@ $(function() {
     numberFiveChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#six").one("click", function() {
@@ -233,7 +228,6 @@ $(function() {
     numberSixChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#seven").one("click", function() {
@@ -245,7 +239,6 @@ $(function() {
     numberSevenChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#eight").one("click", function() {
@@ -257,7 +250,6 @@ $(function() {
     numberEightChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#nine").one("click", function() {
@@ -269,7 +261,6 @@ $(function() {
     numberNineChecker();
     toggle();
     winChecker();
-    alert(winningNumbers)
   });
 
   $("#reset").click(function() {
